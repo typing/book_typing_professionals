@@ -21,7 +21,7 @@
 \setlength{\oddsidemargin}{25mm} %奇数ページ(見開き右)
 
 \addtolength{\oddsidemargin}{-1in}
-%\addtolength{\oddsidemargin}{-0.26in}
+\addtolength{\oddsidemargin}{-0.26in} % A4からB5に縮小する際に見開き右の余白がずれるのでその分を強引に修正
 
 \setlength{\evensidemargin}{15mm} %偶数ページ(見開き左)
 \addtolength{\evensidemargin}{-1in}
@@ -68,7 +68,7 @@
 \makeatletter
   \renewcommand{\thetable}{%
   \arabic{part}-\arabic{table}}
- \@addtoreset{table}{part}
+  \@addtoreset{table}{part}
 \makeatother
 
 % sectionを章とする
@@ -183,8 +183,9 @@
 \vspace{2mm}
 
 \begin{tabular}{rl}
-\textsf{サークル}& ガチタイピング勢 \\
+\textsf{サークル}& タイピングガチ勢 \\
 \textsf{初版第1刷}& 2011/12/31 (C81) \\
+\textsf{初版第2刷}& 2012/03/20 \\
 \textsf{印刷}& しまや出版 \\
 \end{tabular}
 

@@ -1,0 +1,194 @@
+﻿%\documentclass[a4j,twoside]{jsarticle}
+\documentclass[a4j,twoside,twocolumn]{jsarticle}
+
+\usepackage{okumacro}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{helvet}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ulem} %取り消し線を引くため
+\usepackage{here}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{url}
+\AtBeginDvi{\special{pdf: pagesize width 182truemm height 257truemm}}
+
+%余白の設定
+\setlength{\topmargin}{20mm} %上の余白の設定
+\addtolength{\topmargin}{-1in}
+%marginはもともと1inch分取られているため、そのぶんを引く
+%だから、上の二つのsentenceで、紙の上の余白が20mmになります。
+\setlength{\oddsidemargin}{25mm} %奇数ページ(見開き右)
+
+\addtolength{\oddsidemargin}{-1in}
+%\addtolength{\oddsidemargin}{-0.26in}
+
+\setlength{\evensidemargin}{15mm} %偶数ページ(見開き左)
+\addtolength{\evensidemargin}{-1in}
+%文字を打てる範囲の設定
+\setlength{\textwidth}{170mm} %文字を打ち込むことのできる横幅です
+\setlength{\textheight}{250mm} %文字を打ち込むことのできる縦幅です
+
+\setlength{\headsep}{10mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+%\setlength{\columnsep}{4mm}
+%\setlength{\columnseprule}{0mm}
+%\setlength{\marginparsep}{0mm}
+%\setlength{\marginparpush}{0mm}
+%\setlength{\marginwidth}{0mm}
+%\setlength{\footheight}{0mm}
+%\setlength{\footskip}{8mm}
+
+%マクロ
+\newcommand{\key}[1]{ \doublebox{#1} }
+\newcommand{\keydouble}[2]{\key{#1}+\key{#2}}
+\newcommand{\keytriple}[3]{\key{#1}+\key{#2}+\key{#3}}
+\newcommand{\finger}[1]{ \underline{#1} }
+\newcommand{\question}[1]{\vspace{2mm}\subsubsection*{■#1}\vspace{2mm}}
+\newcommand{\answer}[2]{\noindent \textbf{#1}: #2}
+\newcommand{\articlepart}[2]{
+\twocolumn[
+\part{#1}
+\begin{flushright}
+#2
+\end{flushright}
+\setcounter{section}{0}
+\vspace{5mm}
+]
+}
+
+% 図表番号に各部の番号を付ける
+\makeatletter
+  \renewcommand{\thefigure}{%
+  \arabic{part}-\arabic{figure}}
+  \@addtoreset{figure}{part}
+\makeatother
+
+\makeatletter
+  \renewcommand{\thetable}{%
+  \arabic{part}-\arabic{table}}
+ \@addtoreset{table}{part}
+\makeatother
+
+% sectionを章とする
+%\renewcommand{\presectionname}{第}
+\renewcommand{\postsectionname}{章}
+
+% ページ番号はページのヘッダーに配置する（オライリー合わせ）
+\pagestyle{headings}
+% 目次のページ番号はローマ数字にする
+\pagenumbering{roman}
+
+\begin{document}
+
+\thispagestyle{empty}
+\section*{} % dummy
+
+\clearpage
+
+\thispagestyle{empty}
+\section*{} % dummy
+
+\clearpage
+
+\input{hajimeni}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+\thispagestyle{empty}
+\section*{} % dummy
+
+\clearpage
+% 本文のページ番号はアラビア数字でここから1ページ目とする
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{x_i_hajimete}
+
+\clearpage
+\input{vuttar_exercise}
+
+\clearpage
+\input{kouy}
+
+\clearpage
+\input{tomoemon}
+
+\clearpage
+\input{nooyosh}
+
+\clearpage
+\input{eigh8_t}
+
+\clearpage
+\input{vuttar_english}
+
+\clearpage
+\input{o_ck}
+
+\clearpage
+\articlepart{鍵盤打鍵者たちが考えること - Masterminds of Typing}{W/H}
+%\onecolumn
+\input{x_i_dawn}
+
+\clearpage
+\input{x_i_doping}
+
+\clearpage
+\input{x_i_dvoraker}
+
+\clearpage
+\input{x_i_gamer}
+
+\clearpage
+\input{x_i_weathertyping}
+
+\clearpage
+\input{x_i_typewell}
+
+\clearpage
+\input{x_i_datore}
+
+\clearpage
+
+\thispagestyle{empty}
+\section*{} % dummy
+
+\clearpage
+
+\input{atogaki}
+
+\input{introduce_authors}
+
+\clearpage
+
+\thispagestyle{empty}
+\section*{} % dummy
+
+\clearpage
+\thispagestyle{empty}
+\section*{} % dummy
+\vfill{}
+
+\begin{Large}
+\textsf{\textbf{タイピング Professionals}}
+\end{Large}
+
+\hrulefill
+\vspace{2mm}
+
+\begin{tabular}{rl}
+\textsf{サークル}& ガチタイピング勢 \\
+\textsf{初版第1刷}& 2011/12/31 (C81) \\
+\textsf{印刷}& しまや出版 \\
+\end{tabular}
+
+\vspace{2mm}
+\hrulefill
+
+\end{document}
